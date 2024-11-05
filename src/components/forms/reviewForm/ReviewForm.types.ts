@@ -3,7 +3,7 @@ export interface Review {
     rating: number;
     author: string;
     date: string;
-    description: string;
+    description: string[];
 }
 
 export interface ReviewsData {

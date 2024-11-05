@@ -1,0 +1,49 @@
+.review__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.form__wrapper {
+    padding: 20px 40px;
+    /* border: 1px solid #d4d4d4; */
+    border-radius: 15px;
+    /* background: #fbfbfb; */
+    background: #ec6c040b;
+}
+
+.field__wrapper {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.field__label {
+    margin-bottom: 10px;
+}
+
+.btn__wrapper {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: #d22f2e;
+}
+
+.review__field-flex-row {
+    display: flex;
+
+    gap: 10px;
+    width: 100%;
+}
+
+.review__field-description {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
