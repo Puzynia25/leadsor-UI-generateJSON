@@ -1,0 +1,33 @@
+@import "../Forms.css";
+
+.review__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.review-form__wrapper {
+    position: relative;
+    padding: 20px 40px;
+    border-radius: 15px;
+    background: #ec6c040b;
+}
+
+.review__field-flex-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.review__field-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.add-review-btn {
+    margin: 20px 0;
+}

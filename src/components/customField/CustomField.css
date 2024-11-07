@@ -1,0 +1,15 @@
+.field__wrapper {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    color: #2e2e2e;
+}
+
+.field__label {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.error-message {
+    color: #d22f2e;
+}

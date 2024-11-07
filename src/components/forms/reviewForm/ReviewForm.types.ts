@@ -10,3 +10,7 @@ export interface ReviewsData {
     title: string;
     items: Review[];
 }
+
+export interface ReviewsFormProps {
+    onSubmit: (data: ReviewsData) => void;
+}
