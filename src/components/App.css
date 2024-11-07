@@ -13,14 +13,6 @@
     height: 100%;
 }
 
-.new-country-form__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
-}
-
 .sections__wrapper {
     display: flex;
     flex-direction: column;
@@ -49,4 +41,30 @@
     width: 100%;
     height: 100%;
     overflow-y: auto;
+}
+
+.form__wrapper {
+    padding: 20px;
+}
+
+.MuiTabs-indicator {
+    background-color: #ec6c04 !important;
+}
+
+.error-message {
+    color: #d22f2e;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px 10px 0 0;
+}
+
+.dashed_btn {
+    margin-top: 10px;
+    border: 1px dashed darkgrey;
+    border-radius: 2px;
+    color: #000;
 }
