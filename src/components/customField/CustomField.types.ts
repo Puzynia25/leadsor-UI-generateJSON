@@ -4,4 +4,6 @@ export interface CustomFieldProps {
     label: string;
     type?: string;
     multiline?: boolean;
+    remove?: boolean;
+    onRemove?: () => void;
 }

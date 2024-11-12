@@ -1,0 +1,21 @@
+.offers-form__wrapper {
+    position: relative;
+    padding: 40px;
+    border-radius: 15px;
+    background: #6739b708;
+}
+
+.add-offer-btn {
+    margin: 20px 0;
+}
+
+.data-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.field-radio__wrapper {
+    display: flex;
+    flex-direction: column;
+}

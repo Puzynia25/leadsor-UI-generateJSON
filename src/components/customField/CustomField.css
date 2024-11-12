@@ -1,15 +1,23 @@
-.field__wrapper {
-    margin: 20px 0;
+.custom-field-wrapper {
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     color: #2e2e2e;
 }
 
-.field__label {
-    margin-bottom: 10px;
-    font-weight: 500;
+.custom-field__input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
 }
 
-.error-message {
-    color: #d22f2e;
+.custom-field__input-container {
+    width: 100%;
+}
+
+.custom-field__label {
+    margin-bottom: 10px;
+    font-weight: 500;
 }

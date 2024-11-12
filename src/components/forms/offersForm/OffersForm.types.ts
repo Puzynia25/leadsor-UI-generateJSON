@@ -1,4 +1,4 @@
-export interface Offer {
+export interface Data {
     id: number;
     title: string;
     money: string;
@@ -6,9 +6,30 @@ export interface Offer {
     term: string;
     link: string;
     tagId: number[];
-    isBestOffer: boolean;
+    isBestOffer?: boolean;
 }
 
-export interface OffersData {
-    data: Offer[];
+export interface Tag {
+    id: number;
+    name: string;
+}
+
+interface RangeMoneySettings {
+    title: string;
+    currency: string;
+}
+
+export interface Settings {
+    rangeMoney: RangeMoneySettings;
+    linkText: string;
+    cookieExpiresDays: number;
+    title: string;
+    subtitle: string;
+    logo: string;
+}
+
+export interface Offers {
+    data: Data[];
+    tags: Tag[];
+    settings: Settings;
 }
