@@ -1,0 +1,46 @@
+.general-form__wrapper {
+    position: relative;
+    padding: 40px;
+    border-radius: 5px;
+    background: #05a63608;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.summa-period__wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.general-fields__section {
+    position: relative;
+    margin: 20px 0;
+    border: 1px solid darkgreen;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.general-field__title {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: darkgreen;
+}
+
+.rangeData__group {
+    margin-bottom: 20px;
+}
+
+.field-list__header {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.h5-title {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6c6c6c;
+    text-decoration: underline;
+}
