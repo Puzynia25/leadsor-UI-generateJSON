@@ -1,9 +1,8 @@
 export interface CustomFieldProps {
+    label: string;
     id: string;
     name: string;
-    label: string;
-    type?: string;
-    multiline?: boolean;
-    remove?: boolean;
-    onRemove?: () => void;
+    type?: "text" | "checkbox" | "textarea" | "number" | "radio";
+    options?: { value: boolean; label: string }[];
+    onRemove?: () => void | undefined;
 }

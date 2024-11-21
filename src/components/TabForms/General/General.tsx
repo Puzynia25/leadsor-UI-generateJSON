@@ -143,9 +143,8 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                                         label={`Step ${stepIndex + 1}:`}
                                                         id={`step-${stepIndex}`}
                                                         name={`common.steps[${stepIndex}]`}
-                                                        multiline
-                                                        remove={true}
                                                         onRemove={() => removeStep(stepIndex)}
+                                                        type="textarea"
                                                     />
                                                 </div>
                                             ))}
@@ -174,7 +173,7 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                                 <h4>Links:</h4>
                                                 {values.header.links.map((link, linkIndex) => (
                                                     <div key={linkIndex} className="general-fields__section">
-                                                        <div className="field-list__header">
+                                                        <div className="general-field-list__header">
                                                             <h4 className="general-field__title">
                                                                 Link {linkIndex + 1}
                                                             </h4>
@@ -229,9 +228,8 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                                             label={`Description ${descIndex + 1}:`}
                                                             id={`description-${descIndex}`}
                                                             name={`main.description[${descIndex}]`}
-                                                            multiline
-                                                            remove={true}
                                                             onRemove={() => removeDesc(descIndex)}
+                                                            type="textarea"
                                                         />
                                                     </div>
                                                 ))}
@@ -293,7 +291,7 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                             <>
                                                 {values.main.answerBlock.map((answer, answerIndex) => (
                                                     <div key={answer.id} className="general-fields__section">
-                                                        <div className="field-list__header">
+                                                        <div className="general-field-list__header">
                                                             <h4 className="general-field__title">
                                                                 Answer {answerIndex + 1}
                                                             </h4>
@@ -351,9 +349,8 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                                             label={`Card ${cardIndex + 1}:`}
                                                             id={`card_list-${cardIndex}`}
                                                             name={`why.card_list[${cardIndex}].description`}
-                                                            multiline
-                                                            remove={true}
                                                             onRemove={() => removeCardList(cardIndex)}
+                                                            type="textarea"
                                                         />
                                                     </div>
                                                 ))}
@@ -381,7 +378,7 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                             <>
                                                 {values.why.rating.map((rating, ratingIndex) => (
                                                     <div key={rating.id} className="general-fields__section">
-                                                        <div className="field-list__header">
+                                                        <div className="general-field-list__header">
                                                             <h4 className="general-field__title">
                                                                 Rating {ratingIndex + 1}
                                                             </h4>
@@ -470,7 +467,7 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                             <>
                                                 {values.footer.text.map((textItem, textItemIndex) => (
                                                     <div key={textItemIndex} className="general-fields__section">
-                                                        <div className="field-list__header">
+                                                        <div className="general-field-list__header">
                                                             <h4 className="general-field__title">
                                                                 Text {textItemIndex + 1}
                                                             </h4>
@@ -502,11 +499,10 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                                                                     }:`}
                                                                                     id={`description-${descIndex}`}
                                                                                     name={`footer.text[${textItemIndex}].description[${descIndex}]`}
-                                                                                    multiline
-                                                                                    remove={true}
                                                                                     onRemove={() =>
                                                                                         removeDesc(descIndex)
                                                                                     }
+                                                                                    type="textarea"
                                                                                 />
                                                                             </div>
                                                                         )
@@ -554,9 +550,8 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                                             label={`Copyright ${copyrightItemIndex + 1}:`}
                                                             id={`copyright-${copyrightItemIndex}`}
                                                             name={`footer.copyright[${copyrightItemIndex}]`}
-                                                            multiline
-                                                            remove={true}
                                                             onRemove={() => removeCopyright(copyrightItemIndex)}
+                                                            type="textarea"
                                                         />
                                                     </div>
                                                 ))}
@@ -590,9 +585,8 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                                             label={`Description ${descIndex + 1}:`}
                                                             id={`description-${descIndex}`}
                                                             name={`banner.description[${descIndex}]`}
-                                                            multiline
-                                                            remove={true}
                                                             onRemove={() => removeDesc(descIndex)}
+                                                            type="textarea"
                                                         />
                                                     </div>
                                                 ))}
@@ -628,7 +622,7 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                             <>
                                                 {values.forWhat.descriptionBlock.card_list.map((card, cardIndex) => (
                                                     <div key={card.id} className="general-fields__section">
-                                                        <div className="field-list__header">
+                                                        <div className="general-field-list__header">
                                                             <h4 className="general-field__title">
                                                                 Card {cardIndex + 1}
                                                             </h4>
@@ -671,7 +665,7 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                             <>
                                                 {values.forWhat.priceBlock.buttons.map((btn, btnIndex) => (
                                                     <div key={btnIndex} className="general-fields__section">
-                                                        <div className="field-list__header">
+                                                        <div className="general-field-list__header">
                                                             <h4 className="general-field__title">
                                                                 Button {btnIndex + 1}
                                                             </h4>
@@ -728,9 +722,8 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                                             label={`Description ${descIndex + 1}:`}
                                                             id={`description-${descIndex}`}
                                                             name={`about.description[${descIndex}]`}
-                                                            multiline
-                                                            remove={true}
                                                             onRemove={() => removeDesc(descIndex)}
+                                                            type="textarea"
                                                         />
                                                     </div>
                                                 ))}
@@ -771,7 +764,7 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                                 <>
                                                     {values.about.tableData.body.map((bodyItem, bodyItemIndex) => (
                                                         <div key={bodyItem.id} className="general-fields__section">
-                                                            <div className="field-list__header">
+                                                            <div className="general-field-list__header">
                                                                 <h4 className="general-field__title">
                                                                     Body {bodyItemIndex + 1}
                                                                 </h4>
@@ -837,7 +830,7 @@ const GeneralForm = ({ onSubmit }: { onSubmit: (values: General) => void }) => {
                                             <>
                                                 {values.faq.data.map((dataItem, dataItemIndex) => (
                                                     <div key={dataItem.id} className="general-fields__section">
-                                                        <div className="field-list__header">
+                                                        <div className="general-field-list__header">
                                                             <h4 className="general-field__title">
                                                                 Faq {dataItemIndex + 1}
                                                             </h4>

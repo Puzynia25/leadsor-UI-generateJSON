@@ -1,5 +1,5 @@
 .custom-field-wrapper {
-    padding: 20px 0;
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     color: #2e2e2e;
@@ -7,17 +7,26 @@
 
 .custom-field__input {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
+    flex-direction: column;
 }
 
 .custom-field__input-container {
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .custom-field__label {
     margin-bottom: 10px;
     font-weight: 500;
+}
+
+.custom-field__error {
+    min-height: 20px;
+    margin-top: 5px;
+    color: #d22f2e;
+}
+
+.custom-field__basket {
+    margin: 0 10px;
 }

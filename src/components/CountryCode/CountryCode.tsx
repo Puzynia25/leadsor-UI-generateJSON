@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 
-import "./CountryCodeForm.css";
+import "./CountryCode.css";
 
 const CountryCodeForm = ({
     onAddCountry,
@@ -27,7 +27,9 @@ const CountryCodeForm = ({
 
     return (
         <div className="new-country-form__wrapper">
-            <div>Добавить страну:</div>
+            <div>
+                <b>Добавить страну:</b>
+            </div>
             <TextField
                 placeholder="cz"
                 variant="outlined"

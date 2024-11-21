@@ -1,0 +1,22 @@
+.forms-form__wrapper {
+    position: relative;
+    padding: 40px;
+    border-radius: 5px;
+    background: #0356cb08;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.forms-fields__section {
+    position: relative;
+    margin: 20px 0;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.forms-field__title {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: darkblue;
+}

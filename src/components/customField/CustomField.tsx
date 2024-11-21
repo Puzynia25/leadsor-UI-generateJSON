@@ -1,19 +1,19 @@
-import { IconButton, TextareaAutosize, TextField } from "@mui/material";
-import { ErrorMessage, Field } from "formik";
-import { CustomFieldProps } from "./CustomField.types";
+import TextInput from "./TextInput";
+import TextareaInput from "./TextareaInput";
+import CheckboxInput from "./CheckboxInput";
+import NumberInput from "./NumberInput";
+import RadioGroupInput from "./RadioGroupInput";
 
-import "./CustomField.css";
+import { CustomFieldProps } from "./CustomField.types";
+import { ErrorMessage } from "formik";
+import { IconButton } from "@mui/material";
 import { DeleteRounded } from "@mui/icons-material";
 
-const CustomField = ({
-    label,
-    id,
-    name,
-    type = "text",
-    multiline = false,
-    remove = false,
-    onRemove = () => {},
-}: CustomFieldProps) => {
+import "./CustomField.css";
+
+const CustomField = (props: CustomFieldProps) => {
+    const { label, id, name, type = "text", options, onRemove } = props;
+
     return (
         <div className="custom-field-wrapper">
             <label htmlFor={id} className="custom-field__label">
@@ -21,34 +21,25 @@ const CustomField = ({
             </label>
             <div className="custom-field__input">
                 <div className="custom-field__input-container">
-                    {multiline ? (
-                        <Field
-                            as={TextareaAutosize}
-                            id={id}
-                            name={name}
-                            minRows={3}
-                            style={{ resize: "vertical", width: "100%" }}
-                        />
-                    ) : (
-                        <Field
-                            as={TextField}
-                            id={id}
-                            name={name}
-                            type={type}
-                            style={{ resize: "vertical", width: "100%" }}
-                        />
-                    )}
+                    {type === "text" && <TextInput id={id} name={name} />}
+                    {type === "textarea" && <TextareaInput id={id} name={name} />}
+                    {type === "checkbox" && <CheckboxInput id={id} name={name} label={label} />}
+                    {type === "number" && <NumberInput id={id} name={name} />}
+                    {type === "radio" && options && <RadioGroupInput id={id} name={name} options={options} />}
 
-                    <ErrorMessage name={name} component="div" className="error-message" />
+                    {/* Удаление поля */}
+                    {onRemove && (
+                        <div className="custom-field__basket">
+                            <IconButton onClick={onRemove} color="error" aria-label="delete-field">
+                                <DeleteRounded />
+                            </IconButton>
+                        </div>
+                    )}
                 </div>
 
-                {remove ? (
-                    <div>
-                        <IconButton onClick={onRemove} color="error" aria-label="delete-field">
-                            <DeleteRounded />
-                        </IconButton>
-                    </div>
-                ) : null}
+                <div className="custom-field__error">
+                    <ErrorMessage name={name} component="div" />
+                </div>
             </div>
         </div>
     );

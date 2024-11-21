@@ -1,0 +1,58 @@
+.review__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.review__title {
+    margin-top: 20px;
+}
+
+.review-form__wrapper {
+    position: relative;
+    margin-top: 20px;
+    padding: 40px;
+    border-radius: 5px;
+    background: #ec6c040b;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.review-fields__section {
+    position: relative;
+    margin: 20px 0;
+    border: 1px solid #a3490083;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.review-field-list__header {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.review-field__title {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #a34900f4;
+}
+
+.review__field-flex-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.review__field-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.add-review-btn {
+    margin-top: 20px;
+}

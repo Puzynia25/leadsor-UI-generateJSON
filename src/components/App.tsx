@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Box, Chip, Divider, Tab, Tabs } from "@mui/material";
-import ReviewForm from "./forms/reviewForm/ReviewForm";
-import OffersForm from "./forms/offersForm/OffersForm";
-import GeneralForm from "./forms/generalForm/GeneralForm";
-import FormsForm from "./forms/formsForm/FormsForm";
-import { ReviewsData } from "./forms/reviewForm/ReviewForm.types";
-import { OffersData } from "./forms/offersForm/OffersForm.types";
+import ReviewForm from "./TabForms/Review/Review";
+import OffersForm from "./TabForms/Offers/Offers";
+import GeneralForm from "./TabForms/General/General";
+import FormsForm from "./TabForms/Forms/Forms";
+import { ReviewsData } from "./TabForms/Review/Review.types";
+import { OffersData } from "./TabForms/Offers/Offers.types";
 import { downloadJSON } from "../utils";
-import CountryCodeForm from "./forms/countryCodeForm/CountryCodeForm";
+import CountryCodeForm from "./CountryCode/CountryCode";
 
 import "./App.css";
 
@@ -43,7 +43,9 @@ function App() {
                 {showSections && (
                     <div className="sections__wrapper">
                         <div className="country__content">
-                            <p>страна:</p>
+                            <p>
+                                <b>страна:</b>
+                            </p>
                             <Chip label={country} color="warning" />
                         </div>
 
