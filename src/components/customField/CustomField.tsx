@@ -10,6 +10,7 @@ import { IconButton } from "@mui/material";
 import { DeleteRounded } from "@mui/icons-material";
 
 import "./CustomField.css";
+import DateInput from "./DateInput";
 
 const CustomField = (props: CustomFieldProps) => {
     const { label, id, name, type = "text", options, onRemove } = props;
@@ -26,6 +27,7 @@ const CustomField = (props: CustomFieldProps) => {
                     {type === "checkbox" && <CheckboxInput id={id} name={name} label={label} />}
                     {type === "number" && <NumberInput id={id} name={name} />}
                     {type === "radio" && options && <RadioGroupInput id={id} name={name} options={options} />}
+                    {type === "date" && <DateInput id={id} name={name} />}
 
                     {/* Удаление поля */}
                     {onRemove && (
