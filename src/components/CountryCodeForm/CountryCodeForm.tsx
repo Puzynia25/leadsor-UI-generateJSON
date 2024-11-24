@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 
-import "./CountryCode.css";
+import "./CountryCodeForm.css";
 
 const CountryCodeForm = ({
     onAddCountry,

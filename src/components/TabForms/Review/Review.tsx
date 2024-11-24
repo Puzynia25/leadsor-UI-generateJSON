@@ -1,13 +1,24 @@
+import { useState } from "react";
 import { Review, ReviewsData, ReviewsFormProps } from "./Review.types";
 import { FieldArray, Form, Formik, FormikHelpers } from "formik";
 import { Alert, Button, IconButton } from "@mui/material";
 import { CloseOutlined } from "@mui/icons-material";
 import CustomField from "../../CustomField/CustomField";
 import { reviewValidationSchema } from "../../../utils/validationSchema";
+import { useFileUpload } from "../../../hooks/useFileUpload";
+import FileUploadButton from "../../FileUploadButton/FileUploadButton";
 
 import "./Review.css";
 
 const ReviewForm = ({ onSubmit }: ReviewsFormProps) => {
+    const [initialValues, setInitialValues] = useState<ReviewsData>(initialValuesData);
+    const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
+
+    const { onFileUpload, error } = useFileUpload<ReviewsData>((json) => {
+        setInitialValues(json);
+        setIsFormVisible(true);
+    });
+
     const onReviewsSubmit = (values: ReviewsData, { resetForm }: FormikHelpers<ReviewsData>) => {
         const formItems = (list: Review[]) => {
             return list.map((review) => ({
@@ -28,7 +39,7 @@ const ReviewForm = ({ onSubmit }: ReviewsFormProps) => {
         resetForm();
     };
 
-    return (
+    const renderReviewForm = () => (
         <Formik initialValues={initialValues} validationSchema={reviewValidationSchema} onSubmit={onReviewsSubmit}>
             {({ values, errors }) => (
                 <>
@@ -89,21 +100,18 @@ const ReviewForm = ({ onSubmit }: ReviewsFormProps) => {
                                                                         id={`description-${reviewIndex}-${descIndex}`}
                                                                         name={`items[${reviewIndex}].description[${descIndex}]`}
                                                                         onRemove={() => removeDesc(descIndex)}
-                                                                        multiline
+                                                                        type="textarea"
                                                                     />
                                                                 </div>
                                                             ))}
 
-                                                            <div className="dashed_btn">
-                                                                <Button
-                                                                    type="button"
-                                                                    variant="text"
-                                                                    fullWidth
-                                                                    color="inherit"
-                                                                    onClick={() => pushDesc("")}>
-                                                                    + description
-                                                                </Button>
-                                                            </div>
+                                                            <Button
+                                                                type="button"
+                                                                variant="contained"
+                                                                sx={{ bgcolor: "#2e2e2e", marginBottom: "20px" }}
+                                                                onClick={() => pushDesc("")}>
+                                                                + description
+                                                            </Button>
                                                         </>
                                                     )}
                                                 </FieldArray>
@@ -133,13 +141,24 @@ const ReviewForm = ({ onSubmit }: ReviewsFormProps) => {
             )}
         </Formik>
     );
+
+    return (
+        <div>
+            <div className="tab__content-title">
+                <h3>Reviews:</h3>
+            </div>
+
+            {error && <Alert severity="error">{error}</Alert>}
+            {isFormVisible ? renderReviewForm() : <FileUploadButton fileName="review" onFileUpload={onFileUpload} />}
+        </div>
+    );
 };
 
 export default ReviewForm;
 
 const initialReview = { id: Date.now(), author: "", rating: 0, date: "", description: [""] };
 
-const initialValues: ReviewsData = {
+const initialValuesData: ReviewsData = {
     title: "",
     items: [initialReview],
 };

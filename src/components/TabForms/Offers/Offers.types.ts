@@ -28,7 +28,7 @@ export interface Settings {
     logo: string;
 }
 
-export interface Offers {
+export interface OffersData {
     data: Data[];
     tags: Tag[];
     settings: Settings;

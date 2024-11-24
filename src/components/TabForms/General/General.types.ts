@@ -130,7 +130,7 @@ interface Analytics {
     googleTagManagerNoScript: string;
 }
 
-export interface General {
+export interface GeneralData {
     common: Common;
     header: {
         logo: string;

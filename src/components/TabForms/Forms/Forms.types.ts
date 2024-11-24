@@ -42,7 +42,7 @@ interface Range {
     description: string;
 }
 
-export interface Form {
+export interface FormsData {
     items: FormItem[];
     title: string[];
     buttons: FormButtons;

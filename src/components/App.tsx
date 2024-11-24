@@ -6,8 +6,10 @@ import GeneralForm from "./TabForms/General/General";
 import FormsForm from "./TabForms/Forms/Forms";
 import { ReviewsData } from "./TabForms/Review/Review.types";
 import { OffersData } from "./TabForms/Offers/Offers.types";
+import { GeneralData } from "./TabForms/General/General.types";
+import { FormsData } from "./TabForms/Forms/Forms.types";
 import { downloadJSON } from "../utils";
-import CountryCodeForm from "./CountryCode/CountryCode";
+import CountryCodeForm from "./CountryCodeForm/CountryCodeForm";
 
 import "./App.css";
 
@@ -25,7 +27,7 @@ function App() {
         setActiveTab(newValue);
     };
 
-    const onSubmit = (values: ReviewsData | OffersData, section: string): void => {
+    const onSubmit = (values: ReviewsData | OffersData | GeneralData | FormsData, section: string): void => {
         console.log("handleSubmit", values, section);
 
         const filename = `${section}`;
@@ -77,7 +79,12 @@ function App() {
                             <Box className="tab-content">
                                 {activeTab === 0 && <FormsForm onSubmit={(values) => onSubmit(values, "forms")} />}
                                 {activeTab === 1 && <GeneralForm onSubmit={(values) => onSubmit(values, "general")} />}
-                                {activeTab === 2 && <OffersForm onSubmit={(values) => onSubmit(values, "offers")} />}
+                                {activeTab === 2 && (
+                                    <OffersForm
+                                        onSubmit={(values) => onSubmit(values, "offers")}
+                                        selectedCountry={country}
+                                    />
+                                )}
                                 {activeTab === 3 && <ReviewForm onSubmit={(values) => onSubmit(values, "review")} />}
                             </Box>
                         </Box>

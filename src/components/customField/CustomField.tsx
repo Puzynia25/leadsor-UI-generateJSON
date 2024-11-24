@@ -3,6 +3,7 @@ import TextareaInput from "./TextareaInput";
 import CheckboxInput from "./CheckboxInput";
 import NumberInput from "./NumberInput";
 import RadioGroupInput from "./RadioGroupInput";
+import DateInput from "./DateInput";
 
 import { CustomFieldProps } from "./CustomField.types";
 import { ErrorMessage } from "formik";
@@ -10,7 +11,6 @@ import { IconButton } from "@mui/material";
 import { DeleteRounded } from "@mui/icons-material";
 
 import "./CustomField.css";
-import DateInput from "./DateInput";
 
 const CustomField = (props: CustomFieldProps) => {
     const { label, id, name, type = "text", options, onRemove } = props;
